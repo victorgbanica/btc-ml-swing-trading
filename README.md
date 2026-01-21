@@ -11,6 +11,7 @@ This repository implements a gradient-boosted decision tree model for medium-hor
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Backtesting and Results](#backtesting-and-results)
+- [Future Improvements](#future-improvements)
 - [Disclaimer](#disclaimer)
 
 ---
@@ -133,7 +134,62 @@ plot_backtest_results(df, results)
 
 ## Backtesting and Results
 
+A Backtest from Jan 11, 2021 produced the following results:
 
+**Signal Generation (Quantile Strategy)**:
+  - Long threshold (P95): 0.6070
+  - Short threshold (P5): 0.3770
+  - Long signals:    1513 (4.2%)
+  - Short signals:   1513 (4.2%)
+  - Neutral signals: 33216 (91.7%)
+
+**Position Sizing (Confidence-based)**:
+   Average position size: 0.827
+
+**Backtesting Strategy with Worst-Case Fee Tiers**:
+  - Initial capital: $2,000
+  - Maker/Taker ratio: 0% maker, 100% taker
+
+**Backtest Results**:
+  - Initial Capital: $2,000.00
+  - Final Value: $76,928.25
+  - Total Return: 3746.41%
+  - Sharpe Ratio: 1.21
+  - Max Drawdown: -74.38%
+  - Number of Trades: 81
+  - Win Rate: 43.2%
+  - Avg Win: 15.35%
+  - Avg Loss: -7.33%
+  - Avg Hold Time: 135.6 hours (5.6 days)
+
+
+<img width="1280" height="660" alt="05-01-2025-results" src="https://github.com/user-attachments/assets/bd0cd3c3-9e7a-40da-835f-2ee898c8dcd9" />
+
+---
+
+## Future Improvements
+
+This project is actively evolving. Key improvements and ongoing work include:
+
+- **Live Testing / Paper Trading**:  
+  Live testing began on **January 5, 2026**. The model is currently being simulated in a paper trading environment, and this phase is planned to last **at least six months** to evaluate robustness.
+
+- **Weekly Model Retraining**:  
+  The strategy retrains the gradient-boosted model **once per week** using the latest available data, ensuring it adapts to recent market dynamics and maintains predictive relevance.
+
+- **Drawdown Reduction**:  
+  Implementations are underway to **minimize drawdowns**, including enhanced stop-loss rules, position sizing adjustments, and volatility-aware scaling.
+
+- **Feature Engineering Expansion**:  
+  While the public repository uses stub features for safety, private versions are exploring additional predictive indicators to improve signal quality and reduce false positives.
+
+- **Automation and Alerts**:  
+  Integration with automated monitoring, notifications, and logging is planned to track model performance, flag anomalies, and facilitate rapid iteration.
+
+- **Comprehensive Evaluation Metrics**:  
+  Additional performance measures such as drawdown duration, rolling Sharpe ratios, and tail-risk metrics will be tracked to better assess strategy stability under different market conditions.
+
+These improvements aim to make the system **more resilient, adaptive, and informative** while maintaining reproducibility in research and backtesting.
 
 ---
 

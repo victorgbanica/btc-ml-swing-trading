@@ -1,4 +1,4 @@
-# BTC/USD Swing Trading Backtester with ML Signal Generation
+# BTC/USD Swing Trader with ML Signal Generation
 
 This repository implements a gradient-boosted decision tree model for medium-horizon BTC/USD price prediction, complete with feature generation, walk-forward backtesting, and confidence-scaled position sizing. The repository is **public-safe**: proprietary feature engineering has been replaced with placeholder stubs that preserve interface and dimensionality.
 
